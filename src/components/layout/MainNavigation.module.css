@@ -1,0 +1,18 @@
+.header {
+  @apply bg-pink-600;
+}
+.nav {
+  @apply container flex justify-between items-center;
+}
+
+.nav__logo {
+  @apply text-4xl text-white font-bold;
+}
+
+.nav__links {
+  @apply flex space-x-8 text-white;
+}
+
+.nav__links li a {
+  @apply inline-block p-4 font-bold text-lg hover:bg-pink-800 cursor-pointer transition;
+}
