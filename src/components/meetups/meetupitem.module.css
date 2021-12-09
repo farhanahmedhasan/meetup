@@ -1,0 +1,31 @@
+.card {
+  @apply shadow-2xl;
+}
+
+.card__img {
+  @apply mb-4;
+}
+
+.card__textBox {
+  @apply p-4;
+}
+
+.card__title {
+  @apply text-xl font-bold mb-4;
+}
+
+.card__description {
+  @apply text-base;
+}
+
+.card__address {
+  @apply mb-4;
+}
+
+.card__action {
+  @apply flex justify-end items-center p-4;
+}
+
+.card__action button {
+  @apply border border-gray-300 p-2;
+}

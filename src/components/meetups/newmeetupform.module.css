@@ -1,0 +1,15 @@
+.form {
+  @apply grid grid-cols-12 gap-4 place-items-end;
+}
+.form__group {
+  @apply w-3/5;
+}
+.form__label {
+  @apply block mb-2;
+}
+.formControl {
+  @apply w-full outline-none border border-gray-400 py-4 px-6;
+}
+.form__button {
+  @apply py-4 px-12 bg-pink-500 hover:bg-pink-700 text-white font-bold;
+}
