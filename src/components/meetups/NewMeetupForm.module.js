@@ -1,8 +1,10 @@
 import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import classes from './newmeetupform.module.css';
 
-const NewMeetupForm = () => {
+const NewMeetupForm = (props) => {
+  const navigate = useNavigate();
   const titleRef = useRef();
   const descriptionRef = useRef();
   const imageRef = useRef();
@@ -23,9 +25,10 @@ const NewMeetupForm = () => {
       id: Date.now(),
     };
 
-    console.log(meetup);
-
     document.getElementById('form_meetUp').reset();
+
+    props.onAddMeetup(meetup);
+    navigate('/');
   };
 
   return (

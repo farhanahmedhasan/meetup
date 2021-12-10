@@ -1,6 +1,21 @@
 import classes from './meetupitem.module.css';
+import { useFavouriteContext } from '../../store/context/favouriteContext';
 
 const MeetupItem = ({ meetup }) => {
+  const { state, dispatch, addFavourite, removeFavourite } = useFavouriteContext();
+
+  const itemIsFavourite = state.favourites.some((favourite) => favourite.id === meetup.id);
+
+  const toggleFavourite = () => {
+    if (!itemIsFavourite) {
+      addFavourite(dispatch, meetup);
+    }
+
+    if (itemIsFavourite) {
+      removeFavourite(dispatch, meetup.id);
+    }
+  };
+
   return (
     <li className={classes.card}>
       <div className={classes.card__img}>
@@ -13,7 +28,7 @@ const MeetupItem = ({ meetup }) => {
       </div>
 
       <div className={classes.card__action}>
-        <button>To favourites</button>
+        <button onClick={toggleFavourite}>{itemIsFavourite ? 'Remove From Favourites' : 'To favourites'}</button>
       </div>
     </li>
   );

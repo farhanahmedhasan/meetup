@@ -16,3 +16,9 @@
 .nav__links li a {
   @apply inline-block p-4 font-bold text-lg hover:bg-pink-800 cursor-pointer transition;
 }
+.badgeContainer {
+  @apply relative;
+}
+.badge {
+  @apply absolute bottom-0 right-2;
+}
